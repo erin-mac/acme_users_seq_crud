@@ -1,0 +1,27 @@
+<html>
+
+<body>
+    Acme Users Crud-Seq
+    <ul>
+        {% for user in gotUsers %}
+        <ul>
+            <form method='GET' , action="user/{{user.id}}">
+                <a href="/user/{{user.id}}">{{user.firstName + " " + user.lastName}}</a>
+            </form>
+            <form method='POST' , action="/{{user.id}}?_method=DELETE">
+                <button type='submit'>Delete</button>
+            </form>
+        </ul>
+        {% endfor %}
+
+        <form method='POST' , action='/user/{{user.id}}?_method=PUT'>
+            <input type="text" name="firstName" value="{{user.firstName}}" id="first_name">
+            <input type="text" name="lastName" value="{{user.lastName}}" id="last_name">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+</body>
+</ul>
+</body>
+
+</html>
